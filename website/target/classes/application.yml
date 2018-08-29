@@ -1,0 +1,67 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/website?characterEncoding=utf-8&useSSL=false
+    username: root
+    password: 123456
+   ## password: wande2018
+  jpa:
+        database: mysql
+        show-sql: true
+        hibernate:
+          ddl-auto: update
+          naming:
+            strategy: org.hibernate.cfg.DefaultComponentSafeNamingStrategy
+        properties:
+           hibernate:
+              dialect: org.hibernate.dialect.MySQL5Dialect
+
+
+##添加本地磁盘映射
+  mvc:
+    static-path-pattern: /**
+  resources:
+    static-locations: classpath:/META-INF/resources/,classpath:/resources/,classpath:/static/,classpath:/public/,file:${web.upload-path}
+
+  # redis数据库
+  redis:
+    database: 0
+    host: 127.0.0.1
+    password:
+    port: 6379
+    pool:
+      max-active: 8
+      max-wait: -1
+      max-idle: 8
+      min-idle: 0
+    timeout: 0
+  ##邮件相关 网易邮箱 下面直接填写password  qq邮箱下面password里面填写授权码 去自己的qq邮箱获取授权码开启smtp服务
+  mail:
+    host: smtp.qq.com
+    username: 2644794564@qq.com
+    password: hciucswjrtefdidj
+    default-encoding: utf-8
+  ## thymeleaf的配置是为了去掉html的校验
+  thymeleaf:
+    cache: false
+    mode: LEGACYHTML5
+
+server:
+  port: 8090
+web:
+  upload-path: E:/
+
+mybatis:
+  type-aliases-package: com.wandeyun.wuyi.sebsite.bean
+
+## 以谁来发送邮件
+mail:
+  fromMail:
+   addr: 2644794564@qq.com
+
+## Windows系统下测试  文件上传路径
+#file:
+#  path: E:/images
+## linux系统下正式 文件上传路径
+file:
+  path: /data/static/website/upload

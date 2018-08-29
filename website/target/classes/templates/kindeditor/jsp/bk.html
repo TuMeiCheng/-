@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="Generator" content="EditPlus®">
+    <meta name="Author" content="">
+    <meta name="Keywords" content="">
+    <meta name="Description" content="">
+    <title>s十多个</title>
+</head>
+
+    <form method="post" action="/api/admin/getEdit" role="form"
+             class="form-horizontal">
+    <div class="form-group">
+
+        <div class="col-sm-offset-1 col-sm-10">
+            <input type="text" class="form-control" id="title" name="title"
+                   placeholder="请输入标题" />
+        </div>
+    </div>
+    <div class="form-group">
+
+        <div class="col-sm-offset-1 col-sm-10">
+                    <textarea id="editor" name="content">
+                        从这里开始记录我的美好时光
+                    </textarea>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-offset-1 col-sm-10">
+            <button type="submit" class="btn btn-default">保存</button>
+        </div>
+    </div>
+</form>
+    <script charset="utf-8" src="/kindeditor/kindeditor-all.js"></script>
+    <script charset="utf-8" src="/kindeditor/lang/zh-CN.js"></script>
+<script>
+    KindEditor.ready(function(K) {
+        window.editor=K.create('#editor', {
+            uploadJson : '/kindEditorUp/fileUpload',
+            fileManagerJson : '/kindEditorUp/fileManager',
+            allowFileManager : true
+        });
+    });
+</script>
+
+<body>
+
+</body>
+</html>

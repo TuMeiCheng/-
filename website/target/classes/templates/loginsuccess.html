@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>登录成功</title>
+    <div th:text="${session.admin.account}"></div>
+    <div th:text="${session.admin.pwd}"></div>
+    <div th:text="${session.admin.salt}"></div>
+    <image th:src="${session.admin.salt}" width="250" heigth="250"></image>
+    <image src="E:/images/1534556984742813247.jpg" width="250" heigth="250"></image>
+</head>
+<body>
+
+</body>
+</html>
