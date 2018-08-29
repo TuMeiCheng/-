@@ -93,12 +93,6 @@ public class AdminController {
         return ResultVOUtil.success();
     }
 
-    //提示用户先去登录
-    @RequestMapping("/loginFailure")
-    @ResponseBody
-    public ResultVO loginFailure() {
-        return ResultVOUtil.error(1005, "您当前尚未登录,或登录已经失效，请重新登录");
-    }
 
     //跳转到文本编辑器页面
     @RequestMapping("/edit")
